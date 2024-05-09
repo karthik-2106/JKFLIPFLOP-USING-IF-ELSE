@@ -34,15 +34,62 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+step-1 : Go to quartus software.
+
+step-2 : Set new environment.
+
+step-3 : Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+step-4 : Run the program.
+
+step-5 : Give inputs in the waveform table .
+
+step-6 : Run the program.
+
 
 **PROGRAM**
+```
+//Program for flipflops and verify its truth table in quartus using Verilog programming.
+//Developed by: KARTHIKEYAN M
+//Register Number: 212223110020
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
-
+module JKFlipflop(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;	 
+always @ (posedge (clock))
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end      
+else
+ //Write logic for JK flipflop using if else statement for four conditions
+begin
+               if (j == 0 && k == 0)
+                    begin
+                    q <= q;
+                    qb <= qb;
+                    end 
+		else if (j != k)
+                    begin
+                    q <= j;
+                    qb <= k;
+                    end
+               else if (j == 1 && k == 1) 
+                    begin 
+                    q <= ~q; 
+                    qb <= ~qb; 
+                    end 
+            end
+end  
+endmodule
+```
 **RTL LOGIC FOR FLIPFLOPS**
+![326654216-01f97509-11d7-4872-b4cc-e04b1d6aa598](https://github.com/karthik-2106/JKFLIPFLOP-USING-IF-ELSE/assets/150319557/ad309a54-2d75-439b-ad3f-414bb6c8084e)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![326654248-34efd16a-1993-4de0-906e-e54e864e7791](https://github.com/karthik-2106/JKFLIPFLOP-USING-IF-ELSE/assets/150319557/4b3d1d09-dc15-4472-9764-21090c309e46)
 
 **RESULTS**
+Implementation of JK flipflop using verilog and validating their functionality using their functional tables is executed and the output is verified successfully.
